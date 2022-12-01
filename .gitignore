@@ -1,1 +1,2 @@
-PresentationLayer/__pycache__/Main_Window.cpython-39.pyc
+# ignore all pyc files
+*.pyc

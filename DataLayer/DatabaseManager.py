@@ -1,9 +1,9 @@
 import pyodbc
 
-SERVER = 'DESKTOP-S2P20AR'
+SERVER = 'DESKTOP-U1AVMOL'
 DATABASE = 'Traffic_Fines'
 
-# SERVER = servername
+# SERVER = DESKTOP-S2P20AR
 # DATABASE = databasename
 
 connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;'

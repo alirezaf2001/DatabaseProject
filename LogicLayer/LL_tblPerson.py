@@ -1,16 +1,4 @@
 from ..DataLayer import DatabaseManager
-import mysql.connector
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="yourusername",
-    password="yourpassword",
-    database="mydatabase"
-    )
-
-mycursor = mydb.cursor()
-    
-
 
 class tblPerson_LogicLayer:
     def __init__(self) -> None:
@@ -18,17 +6,14 @@ class tblPerson_LogicLayer:
 
     def select_all(self):
         data = self.db.exeQuery("SELECT * FROM tblPerson")
-        
+        return data
     def update_(self):
-        sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
-        mycursor.execute(sql)
-        mydb.commit()   
+        self.db.exeQuery("UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'")
+         
     def insert(self):
-        sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-        val = ("John", "Highway 21")
-        mycursor.execute(sql, val)
-        mydb.commit()        
+        self.db.exeQuery("INSERT INTO customers (name, address) VALUES (%s, %s)")
+        
+               
     def delete_(self):
-        sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
-        mycursor.execute(sql)
-        mydb.commit()
+        self.db.exeQuery("DELETE FROM customers WHERE address = 'Mountain 21'")
+        

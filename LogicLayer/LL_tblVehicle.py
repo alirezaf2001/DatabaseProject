@@ -1,12 +1,12 @@
-from DataLayer import DatabaseManager 
+from ..DataLayer import DatabaseManager
 
-class tblPerson_LogicLayer:
+class tblVehicle_logiclayer:
     def __init__(self) -> None:
         self.db = DatabaseManager.dbManage()
 
     def select_all(self):
         data = self.db.exeQuery("SELECT * FROM tblPerson")
-        return data
+        return data    
     def update_(self):
         self.db.exeQuery("UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'")
          

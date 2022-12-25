@@ -1,6 +1,6 @@
 from DataLayer import DatabaseManager
 
-class tblVehicle_logiclayer:
+class tblVehicle_LogicLayer:
     def __init__(self) -> None:
         self.db = DatabaseManager.dbManage()
 

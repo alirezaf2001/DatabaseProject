@@ -1,4 +1,4 @@
-from ..DataLayer import DatabaseManager
+from DataLayer import DatabaseManager
 
 class tblVehicle_logiclayer:
     def __init__(self) -> None:

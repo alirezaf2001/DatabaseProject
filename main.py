@@ -1,4 +1,4 @@
-from PresentationLayer.Main_Window import MainWindow
+from PresentationLayer.MainWindow import MainWindow
 
 main_window = MainWindow()
 main_window.startWindow()

@@ -1,2 +1,6 @@
 # ignore all pyc files
 *.pyc
+__init__.cpython-39.pyc
+__pycache__/
+.vscode/
+PresentationLayer/__pycache__/__init__.cpython-39.pyc

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter.ttk import *
 
-from PresentationLayer import PersonWindow
+from PresentationLayer import PersonWindow, VehicleWindow, FineWindow
 
 class Window:
     def __init__(self, master) -> None:
@@ -12,24 +12,26 @@ class Window:
         
         Style().configure('btnStyle.TButton', font =('Arial', 14))
 
-        button = Button(master, text="تخلفات",style='btnStyle.TButton')
+        button = Button(master, text="تخلفات",style='btnStyle.TButton', command=openFineWindow)
         button.pack(side='bottom',padx=5,pady=5,fill='x',ipady=10)
 
-        button = Button(master, text="خودرو",style='btnStyle.TButton')
+        button = Button(master, text="خودرو",style='btnStyle.TButton', command=openVehicleWindow)
         button.pack(side='bottom',padx=5,pady=5,fill='x',ipady=10)
 
-        button = Button(master, text="افراد",style='btnStyle.TButton',command=openPersonWindow)
+        button = Button(master, text="افراد",style='btnStyle.TButton', command=openPersonWindow)
         button.pack(side='bottom',padx=5,pady=5,fill='x',ipady=10)
         
 def openPersonWindow():
-    window = PersonWindow.MainWindow()
-    window.startWindow()
+    nextWindow = PersonWindow.MainWindow()
+    nextWindow.startWindow()
 
 def openVehicleWindow():
-    pass
+    nextWindow = VehicleWindow.MainWindow()
+    nextWindow.startWindow()
 
 def openFineWindow():
-    pass
+    nextWindow = FineWindow.MainWindow()
+    nextWindow.startWindow()
 
         
 

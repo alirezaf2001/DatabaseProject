@@ -1,3 +1,5 @@
+/*insert*/
+
 create procedure insertuser
 (
 @I int,
@@ -10,6 +12,7 @@ begin
 insert into tblPerson(Id,FirstName,LastName,Photo)
 values(@I,@First,@Last,@photo)
 end 
+
 /*********/
 create procedure insertfine
 (
@@ -71,8 +74,8 @@ create procedure updatevehicle
 as
 begin
 update tblVehicle set PlateNum=@Plate,ViehcleType=-@VType,ManufactorYear=@MYear
-
 end
+
 /***********/
 create procedure updatefine
 (

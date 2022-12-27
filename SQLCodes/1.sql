@@ -2,11 +2,13 @@ create procedure insertuser
 (
 @I int,
 @First nvarchar(50),
-@Last nvarchar(50)
+@Last nvarchar(50),
+@photo varbinary(max)
 )
 as
 begin
-insert into tblPerson(Id,FirstName,LastName)
+insert into tblPerson(Id,FirstName,LastName,Photo)
+values(@I,@First,@Last,@photo)
 end 
 
 create procedure insertfine
@@ -21,4 +23,5 @@ create procedure insertfine
 as
 begin
 insert into tblFine(Id,PlateNum,Date,FineType,Cost)
+values(@id,@Plate,@Date,@FType,@cost)
 end

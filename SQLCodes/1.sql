@@ -73,7 +73,9 @@ create procedure updatevehicle
 )
 as
 begin
-update tblVehicle set PlateNum=@Plate,ViehcleType=-@VType,ManufactorYear=@MYear
+update tblVehicle set ViehcleType=-@VType,ManufactorYear=@MYear
+where PlateNum=@Plate
+
 end
 
 /***********/
@@ -89,6 +91,6 @@ create procedure updatefine
 )
 as
 begin
-update tblFine set PlateNum=@Plate,Date=@date,FineType=@FType,Cost=@cost
-where Id=@id
+update tblFine set FineType=@FType,Cost=@cost
+where PlateNum=@Plate,Id=@id,Date=@date
 end

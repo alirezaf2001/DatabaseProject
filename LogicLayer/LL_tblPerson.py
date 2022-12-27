@@ -14,6 +14,6 @@ class tblPerson_LogicLayer:
         self.db.exeQuery(f"EXEC insertuser {id} N'{firstname}' N'{lastname}' {photo} ")
         
                
-    def delete_(self):
-        self.db.exeQuery("DELETE FROM customers WHERE address = 'Mountain 21'")
+    def delete(self,firstname,lastname,platenum,date,finetype,cost):
+        self.db.exeQuery(f" EXEC DELETE {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
         

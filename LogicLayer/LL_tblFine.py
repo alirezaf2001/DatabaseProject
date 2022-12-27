@@ -2,14 +2,14 @@ from DataLayer import DatabaseManager
 class tblFine_LogicLayer:
 
     def select_timefine(self,id,fromdate,todate):
-        self.db.exeQuery(f"select * from tblFine where id='{id }' and fromdate='{fromdate }' and todate <'{ todate}'")
+        self.db.identify(f"select * from tblFine where id='{id }' and fromdate='{fromdate }' and todate <'{ todate}'")
         
-    def fname(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"select * from tblFine where firstname='{ First}' and lastname='{ Last}' and plate='{ Plate}' and finetype='{FType}' and cost='{cost}'")
-   
+    def select(self,First,Last,Plate,date,FType,cost):
+        data=self.db.exeQuery("SELECT * FROM tblFine ")
+        return data
     
-    def fname(arg):
-        pass 
+    def update(self,First,Last,Plate,date,FType,cost):
+        self.db.updatefine(f"EXEC'{ First}' N'{ Last}'  N'{ Plate}'  N'{FType}'  N'{cost}'")
     
-    def fname(arg):
-        pass
+    def insert(self,First,Last,Plate,date,FType,cost):
+        self.db.insertfine(f"EXEC'{ First}'  N'{ Last}' N'{ Plate}'  N'{FType}' N'{cost}'")

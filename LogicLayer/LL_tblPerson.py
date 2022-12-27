@@ -7,13 +7,13 @@ class tblPerson_LogicLayer:
     def select_all(self):
         data = self.db.exeQuery("SELECT * FROM tblPerson")
         return data
-    def update_(self):
-        self.db.exeQuery("UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'")
+    def update(self,id,firstname,lastname,photo):
+        self.db.exeQuery(f"EXEC updateuser {id} N'{firstname}' N'{lastname}' {photo} ")
          
-    def insert(self):
-        self.db.exeQuery("INSERT INTO customers (name, address) VALUES (%s, %s)")
+    def insert(self,id,firstname,lastname,photo):
+        self.db.exeQuery(f"EXEC insertuser {id} N'{firstname}' N'{lastname}' {photo} ")
         
                
-    def delete_(self):
-        self.db.exeQuery("DELETE FROM customers WHERE address = 'Mountain 21'")
+    def delete(self,id,firstname,lastname,photo):
+        self.db.exeQuery(f" EXEC DELETE {id} N'{firstname}' N'{lastname}' {photo}")
         

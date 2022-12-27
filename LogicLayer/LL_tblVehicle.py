@@ -5,15 +5,16 @@ class tblVehicle_logiclayer:
         self.db = DatabaseManager.dbManage()
 
     def select_all(self):
-        data = self.db.exeQuery("SELECT * FROM tblPerson")
+        data = self.db.exeQuery("SELECT * FROM tblVerson")
         return data    
-    def update_(self):
-        self.db.exeQuery("UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'")
+    def update(self,firstname,lastname,platenum,date,finetype,cost):
+        self.db.exeQuery(f"EXEC updateuser {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
          
-    def insert(self):
-        self.db.exeQuery("INSERT INTO customers (name, address) VALUES (%s, %s)")
+    def insert(self,firstname,lastname,platenum,date,finetype,cost):
+        self.db.exeQuery(f"EXEC insertuser {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}' ")
         
                
-    def delete_(self):
-        self.db.exeQuery("DELETE FROM customers WHERE address = 'Mountain 21'")
+    def delete(self,firstname,lastname,platenum,date,finetype,cost):
+        self.db.exeQuery(f" EXEC DELETE {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
+        
         

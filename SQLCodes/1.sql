@@ -23,7 +23,7 @@ create procedure insertfine
 as
 begin
 insert into tblFine(Id,PlateNum,Date,FineType,Cost)
-values(@id,@Plate,@Date,@FType,@cost)
+values(@id,@Plate,@date,@FType,@cost)
 end
 
 /****************/

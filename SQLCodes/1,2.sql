@@ -65,7 +65,7 @@ end
 create procedure updatevehicle
 (
 
-@Plate nvarchar(50),
+@Plate int,
 @MYear Datetime,
 @VType nvarchar(50),
 @cost int

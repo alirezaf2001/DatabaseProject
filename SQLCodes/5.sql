@@ -1,4 +1,4 @@
-create procedure plateentrance
+create procedure plateEntrance
 (
 @First nvarchar(50),
 @Last nvarchar(50),

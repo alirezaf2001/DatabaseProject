@@ -92,5 +92,5 @@ create procedure updatefine
 as
 begin
 update tblFine set FineType=@FType,Cost=@cost
-where PlateNum=@Plate,Id=@id,Date=@date
+where PlateNum=@Plate and Id=@id and Date=@date
 end

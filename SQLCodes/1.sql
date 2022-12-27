@@ -83,9 +83,9 @@ create procedure updatefine
 (
 
 @id int,
-@Plate nvarchar(50),
-@date Datetime,
-@FType nvarchar(50),
+@Plate int,
+@date Date,
+@FType varchar(50),
 @cost int
 
 )

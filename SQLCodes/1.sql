@@ -15,7 +15,7 @@ create procedure insertfine
 (
 @id int,
 @Plate nvarchar(50),
-@Date Datetime,
+@date Datetime,
 @FType nvarchar(50),
 @cost int
 

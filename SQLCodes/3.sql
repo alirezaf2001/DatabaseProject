@@ -1,9 +1,7 @@
 create procedure identify
 (
-@id int,
-@photo varbinary(max),
-@Plate int,
-@cost int
+@id int
+
 )
 as
 begin

@@ -1,4 +1,4 @@
-create procedure
+create procedure show
 (
 @id int,
 @fromdate datetime,

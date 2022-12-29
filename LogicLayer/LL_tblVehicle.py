@@ -8,10 +8,10 @@ class tblVehicle_LogicLayer:
         data = self.db.exeQuery("SELECT * FROM tblVerson")
         return data    
     def update(self,firstname,lastname,platenum,date,finetype,cost):
-        self.db.exeQuery(f"EXEC updateuser {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
+        self.db.exeQuery(f"EXEC update vehicle {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
          
     def insert(self,firstname,lastname,platenum,date,finetype,cost):
-        self.db.exeQuery(f"EXEC insertuser {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}' ")
+        self.db.exeQuery(f"EXEC insert vehicle {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}' ")
         
                
     def delete(self,firstname,lastname,platenum,date,finetype,cost):

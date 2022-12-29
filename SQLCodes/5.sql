@@ -1,11 +1,6 @@
 create procedure plateEntrance
 (
-@First nvarchar(50),
-@Last nvarchar(50),
-@Plate int,
-@date datetime,
-@FType nvarchar(50),
-@cost int
+@Plate int
 )
 as
 begin

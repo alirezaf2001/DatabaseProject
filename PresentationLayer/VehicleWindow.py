@@ -3,6 +3,8 @@ from tkinter.ttk import *
 
 from LogicLayer import LL_tblVehicle
 
+from PresentationLayer import Add_EditVehicle
+
 class Window:
     def __init__(self, master) -> None:
 
@@ -20,7 +22,7 @@ class Window:
 
         self.loadData()
 
-        button = Button(master, text="جدید",style='btnStyle.TButton')
+        button = Button(master, text="جدید",style='btnStyle.TButton',command=openAddVehicleWindow)
         button.pack(side='top', anchor='ne',padx=5,pady=5,ipadx=50,ipady=10)
 
         button = Button(master, text="ویرایش",style='btnStyle.TButton')
@@ -38,8 +40,9 @@ class Window:
         for index , row in enumerate(data):
             self.treeview.insert('', tk.END, text = row[0], values=(row[0],row[1],row[2]))
         
-def openPersonWindow():
-    pass
+def openAddVehicleWindow():
+    nextWindow = Add_EditVehicle.MainWindow(isNew=True)
+    nextWindow.startWindow()
 
 def openWindow():
     pass
@@ -66,6 +69,11 @@ class MainWindow:
         self.style.configure(
                         'btnStyle.TButton',
                         font =('Arial', 14))
+
+        self.style.configure(
+                        'TLabel',
+                        font =('Arial', 13)
+        )
 
     def startWindow(self):
         self.configStyle()

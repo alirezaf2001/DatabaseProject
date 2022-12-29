@@ -65,7 +65,7 @@ end
 create procedure updatevehicle
 (
 
-@Plate nvarchar(50),
+@Plate int,
 @MYear Datetime,
 @VType nvarchar(50),
 @cost int
@@ -83,14 +83,14 @@ create procedure updatefine
 (
 
 @id int,
-@Plate nvarchar(50),
-@date Datetime,
-@FType nvarchar(50),
+@Plate int,
+@date Date,
+@FType varchar(50),
 @cost int
 
 )
 as
 begin
 update tblFine set FineType=@FType,Cost=@cost
-where PlateNum=@Plate,Id=@id,Date=@date
+where PlateNum=@Plate and Id=@id and Date=@date
 end

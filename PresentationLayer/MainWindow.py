@@ -5,8 +5,6 @@ from PresentationLayer import PersonWindow, VehicleWindow, FineWindow
 
 class Window:
     def __init__(self, master) -> None:
-        frame = Frame(master)
-
         label = Label(master, text="سامانه تخلفات خودرو", font=('Arial',20,'bold'))
         label.pack(side='top',pady=10)
         

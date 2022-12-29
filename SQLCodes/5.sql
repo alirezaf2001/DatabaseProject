@@ -1,6 +1,6 @@
 create procedure plateEntrance
 (
-@Plate int
+@Plate nvarchar(50)
 )
 as
 begin

@@ -26,5 +26,5 @@ class tblFine_LogicLayer:
     def show(self,id,fromdate,todate):
         self.db.exeQuery(f"EXEC show '{ id }' ")  
         
-    def plateEntrance(Plate):
+    def plateEntrance(self,Plate):
         self.db.exeQuery(f"EXEC plateEntrance '{ id }' ")    

@@ -12,13 +12,13 @@ class tblFine_LogicLayer:
         return data
     
     def update(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC update '{ First}' N'{ Last}'  N'{ Plate}'  N'{FType}'  N'{cost}'")
+        self.db.exeQuery(f"EXEC update '{ First}' N'{ Last}'  N'{ Plate}' N'{date}' N'{FType}'  N'{cost}'")
     
     def insert(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC insert '{ First}'  N'{ Last}' N'{ Plate}'  N'{FType}' N'{cost}'")
+        self.db.exeQuery(f"EXEC insert '{ First}'  N'{ Last}' N'{ Plate}' N'{date}' N'{FType}' N'{cost}'")
         
     def delete(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC delete '{ First}'  N'{ Last}' N'{ Plate}'  N'{FType}' N'{cost}'")
+        self.db.exeQuery(f"EXEC delete '{ First}'  N'{ Last}' N'{ Plate}' N'{date}' N'{FType}' N'{cost}'")
         
     def identify(self,id):
         self.db.exeQuery(f"EXEC identify '{ id }' ")

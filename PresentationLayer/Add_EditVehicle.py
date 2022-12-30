@@ -1,9 +1,10 @@
 import tkinter as tk
 from tkinter.ttk import *
 
+from PresentationLayer.Entities.Vehicle import Vehicle
 
 class Window:
-    def __init__(self, master, isNew = False, person = None) -> None:
+    def __init__(self, master, isNew = True, vehicle = Vehicle()) -> None:
         frame1 = Frame(master)
         frame1.pack(side='top', anchor='nw',padx=5,pady=5)
 
@@ -39,6 +40,11 @@ class Window:
 
         button = Button(frame4, text="تایید",style='btnStyle.TButton')
         button.pack(side='bottom', anchor='se',padx=5,pady=5,ipadx=50,ipady=10)
+
+        if not isNew:
+            entry_plateNum.configure(textvariable=vehicle.PlateNum) 
+            # entry_vehicleType = vehicle.VehicleType
+            # entry_manufactorDate = vehicle.ManufactorYear
 
 
 

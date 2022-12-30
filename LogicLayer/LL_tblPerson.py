@@ -11,7 +11,7 @@ class tblPerson_LogicLayer:
         self.db.exeQuery(f"EXEC updateuser {id} N'{firstname}' N'{lastname}' {photo} ")
          
     def insert(self,id,firstname,lastname,photo):
-        self.db.exeQuery(f"EXEC insertuser {id} N'{firstname}' N'{lastname}' {photo} ")
+        self.db.exeQuery(f"EXEC insertuser {id}, N'{firstname}', N'{lastname}', ? ({photo})")
         
                
     def delete(self,firstname,lastname,platenum,date,finetype,cost):

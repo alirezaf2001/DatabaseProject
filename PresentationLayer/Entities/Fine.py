@@ -1,5 +1,5 @@
 class Fine:
-    def __init__(self, Id, PlateNum, Date, FineType, Cost) -> None:
+    def __init__(self, Id = None, PlateNum = None, Date = None, FineType = None, Cost = None) -> None:
         self.Id = Id
         self.PlateNum = PlateNum
         self.Date = Date

@@ -1,9 +1,11 @@
 import tkinter as tk
 from tkinter.ttk import *
 
+from PresentationLayer.Entities.Fine import Fine
+
 
 class Window:
-    def __init__(self, master, isNew = False, person = None) -> None:
+    def __init__(self, master, isNew = False, fine = Fine()) -> None:
         infoFrame1 = Frame(master)
         infoFrame1.pack(side='top', anchor='nw',padx=5,pady=5)
 

@@ -18,7 +18,7 @@ create procedure insertfine
 (
 @id int,
 @Plate nvarchar(50),
-@date Datetime,
+@date datetime,
 @FType nvarchar(50),
 @cost int
 
@@ -34,7 +34,7 @@ create procedure insertvehicle
 (
 @Plate nvarchar(50),
 @VType nvarchar(50),
-@MYear Datetime
+@MYear date
 
 )
 as
@@ -65,8 +65,8 @@ end
 create procedure updatevehicle
 (
 
-@Plate int,
-@MYear Datetime,
+@Plate nvarchar(50),
+@MYear date,
 @VType nvarchar(50),
 @cost int
 
@@ -83,9 +83,9 @@ create procedure updatefine
 (
 
 @id int,
-@Plate int,
-@date Date,
-@FType varchar(50),
+@Plate nvarchar(50),
+@date datetime,
+@FType nvarchar(50),
 @cost int
 
 )

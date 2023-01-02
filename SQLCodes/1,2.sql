@@ -73,7 +73,7 @@ create procedure updatevehicle
 )
 as
 begin
-update tblVehicle set ViehcleType=-@VType,ManufactorYear=@MYear
+update tblVehicle set ViehcleType=@VType,ManufactorYear=@MYear
 where PlateNum=@Plate
 
 end

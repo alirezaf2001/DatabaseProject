@@ -8,20 +8,27 @@ class tblFine_LogicLayer:
         data=self.db.exeQuery("SELECT * FROM tblFine ")
         return data
     
-    def update(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC update '{ First}' N'{ Last}'  N'{ Plate}' N'{date}' N'{FType}'  N'{cost}'")
+    def select(self, id, plate, date):
+        data = self.db.exeQuery(f"SELECT * FROM tblFine WHERE Id = {id} AND PlateNum = N'{plate}' AND Date = '{date}'")
+        return data
+
+    def update(self,oldId, oldPlate, oldDate,id,plate,date,ftype,cost):
+        self.db.exeQuery(f"EXEC updatefine ?,?,?, ?,?,?,?,?",(oldId,oldPlate,oldDate,id,plate,date,ftype,cost))
     
-    def insert(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC insert '{ First}'  N'{ Last}' N'{ Plate}' N'{date}' N'{FType}' N'{cost}'")
-        
-    def delete(self,First,Last,Plate,date,FType,cost):
-        self.db.exeQuery(f"EXEC delete '{ First}'  N'{ Last}' N'{ Plate}' N'{date}' N'{FType}' N'{cost}'")
+    def insert(self,id,plate,date,ftype,cost):
+        self.db.exeQuery(f"EXEC insertfine ?,?,?,?,?",(id,plate,date,ftype,cost))
         
     def identify(self,id):
-        self.db.exeQuery(f"EXEC identify '{ id }' ")
+        data = self.db.exeQuery(f"EXEC identify ?",(id))
+        return data
         
     def show(self,id,fromdate,todate):
-        self.db.exeQuery(f"EXEC show '{ id }' N'{ fromdate}' N'{ todate}' ")  
+        data = self.db.exeQuery(f"EXEC show ?,?,?",(id,fromdate,todate))  
+        return data
         
     def plateEntrance(self,Plate):
-        self.db.exeQuery(f"EXEC plateEntrance '{ Plate }' ")    
+        data = self.db.exeQuery(f"EXEC plateEntrance ?",(Plate))    
+        return data
+
+    def commit(self):
+        self.db.commit()

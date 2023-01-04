@@ -1,6 +1,6 @@
 import pyodbc
 
-SERVER = 'DESKTOP-S2P20AR'
+SERVER = 'DESKTOP-93OTLTM'
 DATABASE = 'Traffic_Fines'
 
 # SERVER = servername
@@ -17,3 +17,13 @@ class dbManage():
         self.cursor.execute(query)      
         data = self.cursor.fetchall()
         return data
+
+    def exeQuery(self, query, *prams):
+        self.cursor.execute(query, *prams)   
+        try:
+            data = self.cursor.fetchall()
+            return data
+        except:
+            pass
+    def commit(self):
+        self.cursor.commit()

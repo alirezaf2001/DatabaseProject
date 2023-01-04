@@ -7,14 +7,18 @@ class tblVehicle_LogicLayer:
     def select_all(self):
         data = self.db.exeQuery("SELECT * FROM tblVehicle")
         return data    
-    def update(self,firstname,lastname,platenum,date,finetype,cost):
-        self.db.exeQuery(f"EXEC updatevehicle {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
+    
+    def select(self, plateNum):
+        data = self.db.exeQuery(f"SELECT * FROM tblVehicle WHERE PlateNum = N'{plateNum}'")
+        return data
+
+    def update(self,oldPlateNum,plateNum, VehicleType, ManufactorYear):
+        self.db.exeQuery(f"EXEC updatevehicle ?,?,?,?",(oldPlateNum,plateNum,VehicleType,ManufactorYear))
          
-    def insert(self,firstname,lastname,platenum,date,finetype,cost):
-        self.db.exeQuery(f"EXEC insertvehicle {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}' ")
-        
-               
-    def delete(self,firstname,lastname,platenum,date,finetype,cost):
-        self.db.exeQuery(f" EXEC DELETE {date} N'{firstname}' N'{lastname}' {platenum} N'{finetype}' '{cost}'")
+    def insert(self,plateNum, VehicleType, ManufactorYear):
+        self.db.exeQuery(f"EXEC insertvehicle ?,?,?",(plateNum,VehicleType,ManufactorYear))
+
+    def commit(self):
+        self.db.commit()
         
         
